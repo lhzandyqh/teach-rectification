@@ -72,37 +72,38 @@ export const constantRoutes = [
     children: [
       {
         path: 'dashboard',
-        component: () => import('@/views/dashboard/index'),
+        // component: () => import('@/views/dashboard/index'),
+        component: () => import('@/views/myVueFiles/overview/index'),
         name: 'Dashboard',
-        meta: { title: 'dashboard', icon: 'dashboard', noCache: true, affix: true }
-      }
-    ]
-  },
-  {
-    path: '/documentation',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/documentation/index'),
-        name: 'Documentation',
-        meta: { title: 'documentation', icon: 'documentation', affix: true }
-      }
-    ]
-  },
-  {
-    path: '/guide',
-    component: Layout,
-    redirect: '/guide/index',
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/guide/index'),
-        name: 'Guide',
-        meta: { title: 'guide', icon: 'guide', noCache: true }
+        meta: { title: '总览', icon: 'dashboard', noCache: true, affix: true }
       }
     ]
   }
+  // {
+  //   path: '/documentation',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       component: () => import('@/views/documentation/index'),
+  //       name: 'Documentation',
+  //       meta: { title: 'documentation', icon: 'documentation', affix: true }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/guide',
+  //   component: Layout,
+  //   redirect: '/guide/index',
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       component: () => import('@/views/guide/index'),
+  //       name: 'Guide',
+  //       meta: { title: 'guide', icon: 'guide', noCache: true }
+  //     }
+  //   ]
+  // }
 ]
 
 export default new Router({
@@ -112,6 +113,117 @@ export default new Router({
 })
 
 export const asyncRoutes = [
+  {
+    path: '/planningManage',
+    component: Layout,
+    redirect: '/planningManage/index',
+    alwaysShow: true, // will always show the root menu
+    meta: {
+      title: '规划管理',
+      icon: 'table',
+      roles: ['admin', 'editor'] // you can set roles in root nav
+    },
+    children: [
+      {
+        path: 'intelligentDisplay',
+        component: () => import('@/views/myVueFiles/planningManage/intelligentDisplay'),
+        name: 'intelligentDisplay',
+        meta: {
+          title: '智能搜索'
+          // if do not set roles, means: this page does not require permission
+        }
+      },
+      {
+        path: 'indicatorsLibrary',
+        component: () => import('@/views/myVueFiles/planningManage/indicatorsLibrary'),
+        name: 'indicatorsLibrary',
+        meta: {
+          title: '指标库',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      }
+    ]
+  },
+  {
+    path: '/taskManage',
+    component: Layout,
+    redirect: '/taskManage/index',
+    alwaysShow: true, // will always show the root menu
+    meta: {
+      title: '任务管理',
+      icon: 'example',
+      roles: ['admin', 'editor'] // you can set roles in root nav
+    },
+    children: [
+      {
+        path: 'qualityMonitoring',
+        component: () => import('@/views/myVueFiles/taskManage/qualityMonitoring'),
+        name: 'qualityMonitoring',
+        meta: {
+          title: '质量监控'
+          // if do not set roles, means: this page does not require permission
+        }
+      },
+      {
+        path: 'taskRelease',
+        component: () => import('@/views/myVueFiles/taskManage/taskRelease'),
+        name: 'taskRelease',
+        meta: {
+          title: '任务发布',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'warningList',
+        component: () => import('@/views/myVueFiles/taskManage/warningList'),
+        name: 'warningList',
+        meta: {
+          title: '预警列表',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      }
+    ]
+  },
+  {
+    path: '/diagnosticReport',
+    component: Layout,
+    redirect: '/diagnosticReport/index',
+    alwaysShow: true, // will always show the root menu
+    meta: {
+      title: '诊断报告',
+      icon: 'excel',
+      roles: ['admin', 'editor'] // you can set roles in root nav
+    },
+    children: [
+      {
+        path: 'departmentReport',
+        component: () => import('@/views/myVueFiles/diagnosticReport/departmentReport'),
+        name: 'departmentReport',
+        meta: {
+          title: '部门诊断报告'
+          // if do not set roles, means: this page does not require permission
+        }
+      },
+      {
+        path: 'layerReport',
+        component: () => import('@/views/myVueFiles/diagnosticReport/layerReport'),
+        name: 'layerReport',
+        meta: {
+          title: '层面诊断报告',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'personalReport',
+        component: () => import('@/views/myVueFiles/diagnosticReport/personalReport'),
+        name: 'personalReport',
+        meta: {
+          title: '个体诊断报告',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      }
+    ]
+  },
   {
     path: '/permission',
     component: Layout,
