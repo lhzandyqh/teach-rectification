@@ -14,9 +14,9 @@
       </div>
       <div class="function_item">
         <span>筛选条件:</span>
-        <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+        <el-select v-model="value1" style="width: 150px;margin-left: 15px" placeholder="请选择">
           <el-option
-            v-for="item in options"
+            v-for="item in option1"
             :key="item.value"
             :label="item.label"
             :value="item.value"
@@ -27,9 +27,9 @@
     <div class="first_contaienr juli">
       <div class="function_item">
         <span>学年:</span>
-        <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+        <el-select v-model="value3" style="width: 150px;margin-left: 15px" placeholder="请选择">
           <el-option
-            v-for="item in options"
+            v-for="item in option3"
             :key="item.value"
             :label="item.label"
             :value="item.value"
@@ -38,9 +38,9 @@
       </div>
       <div class="function_item">
         <span>学期:</span>
-        <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+        <el-select v-model="value2" style="width: 150px;margin-left: 15px" placeholder="请选择">
           <el-option
-            v-for="item in options"
+            v-for="item in option2"
             :key="item.value"
             :label="item.label"
             :value="item.value"
@@ -101,6 +101,50 @@ export default {
   },
   data() {
     return {
+      value1: '',
+      value2: '',
+      value3: '',
+      value4: '',
+      option1: [{
+        value: '全部',
+        label: '全部'
+      }, {
+        value: '个人',
+        label: '个人'
+      }, {
+        value: '系部',
+        label: '系部'
+      }],
+      option2: [{
+        value: '全部',
+        label: '全部'
+      }, {
+        value: '第一学期',
+        label: '第一学期'
+      }, {
+        value: '第二学期',
+        label: '第二学期'
+      }],
+      option3: [{
+        value: '全部',
+        label: '全部'
+      }, {
+        value: '2019-2020',
+        label: '2019-2020'
+      }, {
+        value: '2018-2019',
+        label: '2018-2019'
+      }, {
+        value: '2017-2018',
+        label: '2017-2018'
+      }, {
+        value: '2016-2017',
+        label: '2016-2017'
+      }, {
+        value: '2015-2016',
+        label: '2015-2016'
+      }],
+      input: '',
       currentPage4: 1
     }
   }

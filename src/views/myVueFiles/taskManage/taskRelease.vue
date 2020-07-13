@@ -6,9 +6,9 @@
           <div class="first_container">
             <div class="function_item">
               <span>任务类型:</span>
-              <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+              <el-select v-model="value1" style="width: 150px;margin-left: 15px" placeholder="请选择">
                 <el-option
-                  v-for="item in options"
+                  v-for="item in option1"
                   :key="item.value"
                   :label="item.label"
                   :value="item.value"
@@ -17,9 +17,9 @@
             </div>
             <div class="function_item">
               <span>任务状态:</span>
-              <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+              <el-select v-model="value2" style="width: 150px;margin-left: 15px" placeholder="请选择">
                 <el-option
-                  v-for="item in options"
+                  v-for="item in option2"
                   :key="item.value"
                   :label="item.label"
                   :value="item.value"
@@ -28,9 +28,9 @@
             </div>
             <div class="function_item">
               <span>责任部门:</span>
-              <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+              <el-select v-model="value3" style="width: 150px;margin-left: 15px" placeholder="请选择">
                 <el-option
-                  v-for="item in options"
+                  v-for="item in option3"
                   :key="item.value"
                   :label="item.label"
                   :value="item.value"
@@ -63,9 +63,9 @@
           <div class="first_container">
             <div class="function_item">
               <span>任务类型:</span>
-              <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+              <el-select v-model="value1" style="width: 150px;margin-left: 15px" placeholder="请选择">
                 <el-option
-                  v-for="item in options"
+                  v-for="item in option1"
                   :key="item.value"
                   :label="item.label"
                   :value="item.value"
@@ -74,9 +74,9 @@
             </div>
             <div class="function_item">
               <span>任务状态:</span>
-              <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+              <el-select v-model="value2" style="width: 150px;margin-left: 15px" placeholder="请选择">
                 <el-option
-                  v-for="item in options"
+                  v-for="item in option2"
                   :key="item.value"
                   :label="item.label"
                   :value="item.value"
@@ -85,9 +85,9 @@
             </div>
             <div class="function_item">
               <span>任务性质:</span>
-              <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+              <el-select v-model="value4" style="width: 150px;margin-left: 15px" placeholder="请选择">
                 <el-option
-                  v-for="item in options"
+                  v-for="item in option4"
                   :key="item.value"
                   :label="item.label"
                   :value="item.value"
@@ -96,9 +96,9 @@
             </div>
             <div class="function_item">
               <span>责任部门:</span>
-              <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+              <el-select v-model="value3" style="width: 150px;margin-left: 15px" placeholder="请选择">
                 <el-option
-                  v-for="item in options"
+                  v-for="item in option3"
                   :key="item.value"
                   :label="item.label"
                   :value="item.value"
@@ -141,7 +141,74 @@ export default {
   },
   data() {
     return {
-      activeName: 'first'
+      activeName: 'first',
+      value1: '',
+      value2: '',
+      value3: '',
+      option1: [{
+        value: '全部',
+        label: '全部'
+      }, {
+        value: '规划任务',
+        label: '规划任务'
+      }, {
+        value: '重点任务',
+        label: '重点任务'
+      }, {
+        value: '日常任务',
+        label: '日常任务'
+      }, {
+        value: '临时任务',
+        label: '临时任务'
+      }, {
+        value: '个体任务',
+        label: '个体任务'
+      }],
+      option2: [{
+        value: '全部',
+        label: '全部'
+      }, {
+        value: '待提审',
+        label: '待提审'
+      }, {
+        value: '审核中',
+        label: '审核中'
+      }, {
+        value: '审核未通过',
+        label: '审核未通过'
+      }, {
+        value: '未开始',
+        label: '未开始'
+      }, {
+        value: '进行中',
+        label: '进行中'
+      }, {
+        value: '已完成',
+        label: '已完成'
+      }, {
+        value: '逾期未完成',
+        label: '逾期未完成'
+      }],
+      option3: [{
+        value: '职能部门',
+        label: '职能部门'
+      }, {
+        value: '教学部门',
+        label: '教学部门'
+      }],
+      option4: [{
+        value: '我创建的',
+        label: '我创建的'
+      }, {
+        value: '我审核的',
+        label: '我审核的'
+      }, {
+        value: '我参与的',
+        label: '我参与的'
+      }, {
+        value: '我负责的',
+        label: '我负责的'
+      }]
     }
   },
   methods: {

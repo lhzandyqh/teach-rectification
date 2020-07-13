@@ -7,9 +7,9 @@
             <div class="content_function_first">
               <div class="function_item">
                 <span>展示类型:</span>
-                <el-select v-model="value" style="width: 120px;margin-left: 15px" placeholder="请选择">
+                <el-select v-model="value1" style="width: 120px;margin-left: 15px" placeholder="请选择">
                   <el-option
-                    v-for="item in options"
+                    v-for="item in option1"
                     :key="item.value"
                     :label="item.label"
                     :value="item.value"
@@ -18,9 +18,9 @@
               </div>
               <div class="function_item">
                 <span>规划层面:</span>
-                <el-select v-model="value" style="width: 120px;margin-left: 15px" placeholder="请选择">
+                <el-select v-model="value2" style="width: 120px;margin-left: 15px" placeholder="请选择">
                   <el-option
-                    v-for="item in options"
+                    v-for="item in option2"
                     :key="item.value"
                     :label="item.label"
                     :value="item.value"
@@ -29,9 +29,9 @@
               </div>
               <div class="function_item">
                 <span>总规划名称:</span>
-                <el-select v-model="value" style="width: 120px;margin-left: 15px" placeholder="请选择">
+                <el-select v-model="value3" style="width: 120px;margin-left: 15px" placeholder="请选择">
                   <el-option
-                    v-for="item in options"
+                    v-for="item in option3"
                     :key="item.value"
                     :label="item.label"
                     :value="item.value"
@@ -42,9 +42,9 @@
             <div class="content_function_second">
               <div class="function_item">
                 <span>规划状态：</span>
-                <el-select v-model="value" style="width: 120px;margin-left: 5px" placeholder="请选择">
+                <el-select v-model="value4" style="width: 120px;margin-left: 5px" placeholder="请选择">
                   <el-option
-                    v-for="item in options"
+                    v-for="item in option4"
                     :key="item.value"
                     :label="item.label"
                     :value="item.value"
@@ -53,9 +53,9 @@
               </div>
               <div class="function_item">
                 <span>责任部门：</span>
-                <el-select v-model="value" style="width: 120px;margin-left: 5px" placeholder="请选择">
+                <el-select v-model="value5" style="width: 120px;margin-left: 5px" placeholder="请选择">
                   <el-option
-                    v-for="item in options"
+                    v-for="item in option5"
                     :key="item.value"
                     :label="item.label"
                     :value="item.value"
@@ -64,7 +64,7 @@
               </div>
               <div class="function_item">
                 <span>规划名称：</span>
-                <el-input v-model="input" style="width: 200px;margin-left: 5px" placeholder="请输入内容" />
+                <el-input v-model="input1" style="width: 200px;margin-left: 5px" placeholder="请输入内容" />
               </div>
               <div class="button-container">
                 <el-button type="primary" icon="el-icon-plus">新建规划</el-button>
@@ -94,9 +94,9 @@
             <div class="content_function_first">
               <div class="function_item">
                 <span>展示类型:</span>
-                <el-select v-model="value" style="width: 120px;margin-left: 15px" placeholder="请选择">
+                <el-select v-model="value1" style="width: 120px;margin-left: 15px" placeholder="请选择">
                   <el-option
-                    v-for="item in options"
+                    v-for="item in option1"
                     :key="item.value"
                     :label="item.label"
                     :value="item.value"
@@ -105,9 +105,9 @@
               </div>
               <div class="function_item">
                 <span>规划层面:</span>
-                <el-select v-model="value" style="width: 120px;margin-left: 15px" placeholder="请选择">
+                <el-select v-model="value2" style="width: 120px;margin-left: 15px" placeholder="请选择">
                   <el-option
-                    v-for="item in options"
+                    v-for="item in option2"
                     :key="item.value"
                     :label="item.label"
                     :value="item.value"
@@ -116,9 +116,9 @@
               </div>
               <div class="function_item">
                 <span>总规划名称:</span>
-                <el-select v-model="value" style="width: 120px;margin-left: 15px" placeholder="请选择">
+                <el-select v-model="value3" style="width: 120px;margin-left: 15px" placeholder="请选择">
                   <el-option
-                    v-for="item in options"
+                    v-for="item in option3"
                     :key="item.value"
                     :label="item.label"
                     :value="item.value"
@@ -129,9 +129,9 @@
             <div class="content_function_second">
               <div class="function_item">
                 <span>规划状态：</span>
-                <el-select v-model="value" style="width: 120px;margin-left: 5px" placeholder="请选择">
+                <el-select v-model="value4" style="width: 120px;margin-left: 5px" placeholder="请选择">
                   <el-option
-                    v-for="item in options"
+                    v-for="item in option4"
                     :key="item.value"
                     :label="item.label"
                     :value="item.value"
@@ -140,9 +140,9 @@
               </div>
               <div class="function_item">
                 <span>责任部门：</span>
-                <el-select v-model="value" style="width: 120px;margin-left: 5px" placeholder="请选择">
+                <el-select v-model="value5" style="width: 120px;margin-left: 5px" placeholder="请选择">
                   <el-option
-                    v-for="item in options"
+                    v-for="item in option5"
                     :key="item.value"
                     :label="item.label"
                     :value="item.value"
@@ -151,7 +151,7 @@
               </div>
               <div class="function_item">
                 <span>规划名称：</span>
-                <el-input v-model="input" style="width: 200px;margin-left: 5px" placeholder="请输入内容" />
+                <el-input v-model="input1" style="width: 200px;margin-left: 5px" placeholder="请输入内容" />
               </div>
               <div class="button-container">
                 <el-button type="primary" icon="el-icon-plus">新建规划</el-button>
@@ -190,6 +190,74 @@ export default {
   },
   data() {
     return {
+      option1: [{
+        value: '列表视图',
+        label: '列表视图'
+      }, {
+        value: '体系视图',
+        label: '体系视图'
+      }],
+      option2: [{
+        value: '全部',
+        label: '全部'
+      }, {
+        value: '学校',
+        label: '学校'
+      }, {
+        value: '专业',
+        label: '专业'
+      }, {
+        value: '课程',
+        label: '课程'
+      }, {
+        value: '教师',
+        label: '教师'
+      }, {
+        value: '学生',
+        label: '学生'
+      }],
+      option3: [{
+        value: '全部',
+        label: '全部'
+      }],
+      option4: [{
+        value: '全部',
+        label: '全部'
+      }, {
+        value: '待提审',
+        label: '待提审'
+      }, {
+        value: '审核中',
+        label: '审核中'
+      }, {
+        value: '审核未通过',
+        label: '审核未通过'
+      }, {
+        value: '未开始',
+        label: '未开始'
+      }, {
+        value: '进行中',
+        label: '进行中'
+      }, {
+        value: '已完成',
+        label: '已完成'
+      }, {
+        value: '逾期未完成',
+        label: '逾期未完成'
+      }],
+      option5: [{
+        value: '职能部门',
+        label: '职能部门'
+      }, {
+        value: '教学部门',
+        label: '教学部门'
+      }],
+      value: '',
+      value2: '',
+      value3: '',
+      value4: '',
+      value5: '',
+      input1: '',
       activeName: 'first',
       currentPage4: 1
     }

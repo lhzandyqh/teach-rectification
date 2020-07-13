@@ -19,9 +19,9 @@
         <div class="right_first_container">
           <div class="function_item">
             <span>监测点重要级别:</span>
-            <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+            <el-select v-model="value1" style="width: 150px;margin-left: 15px" placeholder="请选择">
               <el-option
-                v-for="item in options"
+                v-for="item in option1"
                 :key="item.value"
                 :label="item.label"
                 :value="item.value"
@@ -30,14 +30,7 @@
           </div>
           <div class="function_item">
             <span>监测点名称:</span>
-            <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value"
-              />
-            </el-select>
+            <el-input v-model="value1" style="width: 150px;margin-left: 15px" placeholder="请输入" />
           </div>
           <div class="button-container">
             <el-button type="primary" size="small">新建监测点</el-button>
@@ -73,42 +66,113 @@ export default {
   },
   data() {
     return {
+      value1: '',
+      value2: '',
+      option1: [{
+        value: '全部',
+        label: '全部'
+      }, {
+        value: '重要',
+        label: '重要'
+      }, {
+        value: '一般',
+        label: '一般'
+      }],
+      // option2: [{
+      //   value: '职能部门',
+      //   label: '职能部门'
+      // }, {
+      //   value: '教学部门',
+      //   label: '教学部门'
+      // }],
       data: [{
         label: '学校',
         children: [{
           label: '基本情况',
           children: [{
-            label: '三级 1-1-1'
+            label: '教职工人员数量'
+          }, {
+            label: '教职工人员性别比例'
+          }, {
+            label: '学生人数'
+          }, {
+            label: '开设专业总数'
+          }, {
+            label: '图书总量'
+          }, {
+            label: '占地面积'
+          }, {
+            label: '师生比'
+          }, {
+            label: '建筑面积'
           }]
         }, {
           label: '管理队伍',
           children: [{
-            label: '三级 1-1-1'
+            label: '领导班子人员数量'
+          }, {
+            label: '领导班子性别比例'
+          }, {
+            label: '处职干部人员数量'
+          }, {
+            label: '处职干部性别比例'
+          }, {
+            label: '科值干部人员数量'
+          }, {
+            label: '科值干部人员比例'
           }]
         }, {
           label: '党建工作',
           children: [{
-            label: '三级 1-1-1'
+            label: '组织机构设置数量'
+          }, {
+            label: '党员数量'
+          }, {
+            label: '党员教师比例'
+          }, {
+            label: '党员学生比例'
+          }, {
+            label: '党员教师发展人数'
+          }, {
+            label: '党员学生发展人数'
           }]
         }, {
           label: '师资队伍',
           children: [{
-            label: '三级 1-1-1'
+            label: '校内专任教师数量'
+          }, {
+            label: '校内专任教师比例'
           }]
         }, {
           label: '教学工作',
           children: [{
-            label: '三级 1-1-1'
+            label: '教学教材数量'
+          }, {
+            label: '顶岗实习人数'
+          }, {
+            label: '质量工程数量'
+          }, {
+            label: '教学检查次数'
           }]
         }, {
           label: '学生工作',
           children: [{
-            label: '三级 1-1-1'
+            label: '学生总数'
+          }, {
+            label: '毕业率'
+          }, {
+            label: '社团情况'
+          }, {
+            label: '贫困生人数'
+          }, {
+            label: '违纪数量'
           }]
         }, {
           label: '招生情况',
           children: [{
-            label: '三级 1-1-1'
+            label: '省内生源数量'
+          }, {
+            label: '省外生源数量'
           }]
         }, {
           label: '就业情况',

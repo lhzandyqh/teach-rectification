@@ -6,9 +6,9 @@
           <div class="first_container">
             <div class="function_item">
               <span>学年:</span>
-              <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+              <el-select v-model="value1" style="width: 150px;margin-left: 15px" placeholder="请选择">
                 <el-option
-                  v-for="item in options"
+                  v-for="item in option1"
                   :key="item.value"
                   :label="item.label"
                   :value="item.value"
@@ -44,9 +44,9 @@
           <div class="first_container">
             <div class="function_item">
               <span>学年:</span>
-              <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+              <el-select v-model="value1" style="width: 150px;margin-left: 15px" placeholder="请选择">
                 <el-option
-                  v-for="item in options"
+                  v-for="item in option1"
                   :key="item.value"
                   :label="item.label"
                   :value="item.value"
@@ -92,6 +92,27 @@ export default {
   },
   data() {
     return {
+      input: '',
+      value1: '',
+      option1: [{
+        value: '全部',
+        label: '全部'
+      }, {
+        value: '2019-2020',
+        label: '2019-2020'
+      }, {
+        value: '2018-2019',
+        label: '2018-2019'
+      }, {
+        value: '2017-2018',
+        label: '2017-2018'
+      }, {
+        value: '2016-2017',
+        label: '2016-2017'
+      }, {
+        value: '2015-2016',
+        label: '2015-2016'
+      }],
       activeName: 'first',
       currentPage4: '1'
     }

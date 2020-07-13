@@ -3,9 +3,9 @@
     <div class="first_container">
       <div class="function_item">
         <span>任务类型:</span>
-        <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+        <el-select v-model="value1" style="width: 150px;margin-left: 15px" placeholder="请选择">
           <el-option
-            v-for="item in options"
+            v-for="item in option1"
             :key="item.value"
             :label="item.label"
             :value="item.value"
@@ -14,24 +14,24 @@
       </div>
       <div class="function_item">
         <span>责任部门:</span>
-        <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择责任部门">
+        <el-select v-model="value2" style="width: 150px;margin-left: 15px" placeholder="请选择责任部门">
           <el-option
-            v-for="item in options"
+            v-for="item in option2"
             :key="item.value"
             :label="item.label"
             :value="item.value"
           />
         </el-select>
-        <el-select v-model="value" style="width: 150px" placeholder="起止时间">
+        <el-select v-model="value3" style="width: 150px" placeholder="起止时间">
           <el-option
-            v-for="item in options"
+            v-for="item in option3"
             :key="item.value"
             :label="item.label"
             :value="item.value"
           />
         </el-select>
         <el-date-picker
-          v-model="value1"
+          v-model="value4"
           type="daterange"
           start-placeholder="开始日期"
           end-placeholder="结束日期"
@@ -113,6 +113,43 @@ export default {
   },
   data() {
     return {
+      value1: '',
+      value2: '',
+      value3: '',
+      value4: '',
+      option1: [{
+        value: '全部',
+        label: '全部'
+      }, {
+        value: '规划任务',
+        label: '规划任务'
+      }, {
+        value: '重点任务',
+        label: '重点任务'
+      }, {
+        value: '日常任务',
+        label: '日常任务'
+      }, {
+        value: '临时任务',
+        label: '临时任务'
+      }, {
+        value: '个体任务',
+        label: '个体任务'
+      }],
+      option2: [{
+        value: '职能部门',
+        label: '职能部门'
+      }, {
+        value: '教学部门',
+        label: '教学部门'
+      }],
+      option3: [{
+        value: '开始日期',
+        label: '开始日期'
+      }, {
+        value: '结束日期',
+        label: '结束日期'
+      }],
       currentPage4: 1
     }
   }

@@ -1,0 +1,113 @@
+<template>
+  <div class="app-container">
+    <el-table
+      :data="tableData"
+      :header-cell-style="{background:'#F5F7FA',color:'#788c90'}"
+    >
+      <el-table-column
+        prop=""
+        label="项目名称"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="通知下发时间"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="项目来源"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="通知发布网址"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="上报时间要求"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="上报材料要求"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="上报省级部门时间"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="数量要求"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="上报联系人"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="上报联系电话"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="上报电子邮箱"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="上报联系地址"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="学校负责部门名称"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="省级主管部门"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="省级主管负责人"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="是否上传通知"
+        width="150"
+      />
+      <el-table-column
+        prop="date"
+        label="是否上传附件材料"
+        width="150"
+      />
+      <el-table-column
+        prop="address"
+        label="操作"
+      />
+    </el-table>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'MajorTableOne',
+  data() {
+    return {
+      tableData: []
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+</style>

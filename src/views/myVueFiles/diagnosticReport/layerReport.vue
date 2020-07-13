@@ -6,9 +6,9 @@
           <div class="first_container">
             <div class="function_item">
               <span>学年:</span>
-              <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+              <el-select v-model="value1" style="width: 150px;margin-left: 15px" placeholder="请选择">
                 <el-option
-                  v-for="item in options"
+                  v-for="item in option1"
                   :key="item.value"
                   :label="item.label"
                   :value="item.value"
@@ -17,9 +17,9 @@
             </div>
             <div class="function_item">
               <span>层级:</span>
-              <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+              <el-select v-model="value2" style="width: 150px;margin-left: 15px" placeholder="请选择">
                 <el-option
-                  v-for="item in options"
+                  v-for="item in option2"
                   :key="item.value"
                   :label="item.label"
                   :value="item.value"
@@ -55,9 +55,9 @@
           <div class="first_container">
             <div class="function_item">
               <span>学年:</span>
-              <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+              <el-select v-model="value1" style="width: 150px;margin-left: 15px" placeholder="请选择">
                 <el-option
-                  v-for="item in options"
+                  v-for="item in option1"
                   :key="item.value"
                   :label="item.label"
                   :value="item.value"
@@ -66,9 +66,9 @@
             </div>
             <div class="function_item">
               <span>层级:</span>
-              <el-select v-model="value" style="width: 150px;margin-left: 15px" placeholder="请选择">
+              <el-select v-model="value2" style="width: 150px;margin-left: 15px" placeholder="请选择">
                 <el-option
-                  v-for="item in options"
+                  v-for="item in option2"
                   :key="item.value"
                   :label="item.label"
                   :value="item.value"
@@ -114,6 +114,46 @@ export default {
   },
   data() {
     return {
+      input: '',
+      value1: '',
+      option1: [{
+        value: '全部',
+        label: '全部'
+      }, {
+        value: '2019-2020',
+        label: '2019-2020'
+      }, {
+        value: '2018-2019',
+        label: '2018-2019'
+      }, {
+        value: '2017-2018',
+        label: '2017-2018'
+      }, {
+        value: '2016-2017',
+        label: '2016-2017'
+      }, {
+        value: '2015-2016',
+        label: '2015-2016'
+      }],
+      option2: [{
+        value: '全部',
+        label: '全部'
+      }, {
+        value: '学校',
+        label: '学校'
+      }, {
+        value: '专业',
+        label: '专业'
+      }, {
+        value: '课程',
+        label: '课程'
+      }, {
+        value: '教师',
+        label: '教师'
+      }, {
+        value: '学生',
+        label: '学生'
+      }],
       activeName: 'first'
     }
   },
