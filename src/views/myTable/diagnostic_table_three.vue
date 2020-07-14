@@ -5,44 +5,51 @@
       :header-cell-style="{background:'#F5F7FA',color:'#788c90'}"
     >
       <el-table-column
-        prop=""
+        prop="hao"
         label="序号"
         width="50"
       />
       <el-table-column
-        prop="date"
+        prop="mingcheng"
         label="报告名称"
-        width="300"
+        width="350"
       />
       <el-table-column
-        prop="date"
+        prop="cengji"
         label="层级"
-        width="150"
+        width="200"
       />
       <el-table-column
-        prop="date"
-        label="责任人"
-        width="100"
-      />
-      <el-table-column
-        prop="date"
+        prop="xuenian"
         label="学年"
         width="150"
       />
       <el-table-column
-        prop="date"
+        prop="fuze"
+        label="负责人"
+        width="150"
+      />
+      <el-table-column
+        prop="chaungjian"
         label="创建日期"
         width="200"
       />
       <el-table-column
-        prop="date"
+        prop="address"
         label="预览"
-        width="100"
-      />
+      >
+        <template slot-scope="scope">
+          <el-button type="text" @click="console.log(scope.row)">预览</el-button>
+        </template>
+      </el-table-column>
       <el-table-column
         prop="address"
         label="操作"
-      />
+      >
+        <template slot-scope="scope">
+          <el-button type="text" @click="console.log(scope.row)">下载</el-button>
+        </template>
+      </el-table-column>
     </el-table>
   </div>
 </template>
@@ -53,45 +60,40 @@ export default {
   data() {
     return {
       tableData: [{
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市'
+        hao: '1',
+        mingcheng: '[2018-2019]学年学生层面质量报告',
+        cengji: '学生',
+        xuenian: '2018-2019',
+        fuze: '李志群',
+        chaungjian: '2019-12-01'
       }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市'
+        hao: '2',
+        mingcheng: '[2018-2019]学年教师层面质量报告',
+        cengji: '教师',
+        xuenian: '2018-2019',
+        fuze: '柳云龙',
+        chaungjian: '2019-12-01'
       }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市'
+        hao: '3',
+        mingcheng: '[2018-2019]学年课程层面质量报告',
+        cengji: '课程',
+        xuenian: '2018-2019',
+        fuze: '李哲',
+        chaungjian: '2019-12-01'
       }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市'
+        hao: '4',
+        mingcheng: '[2018-2019]学年专业层面质量报告',
+        cengji: '专业',
+        xuenian: '2018-2019',
+        fuze: '李哲',
+        chaungjian: '2019-12-01'
       }, {
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市'
-      }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市'
-      }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市'
-      }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市'
+        hao: '5',
+        mingcheng: '[2018-2019]学年学院层面质量报告',
+        cengji: '学校',
+        xuenian: '2018-2019',
+        fuze: '刘淑艳',
+        chaungjian: '2019-12-01'
       }]
     }
   }

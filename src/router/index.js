@@ -125,21 +125,21 @@ export const asyncRoutes = [
     },
     children: [
       {
-        path: 'intelligentDisplay',
-        component: () => import('@/views/myVueFiles/planningManage/intelligentDisplay'),
-        name: 'intelligentDisplay',
-        meta: {
-          title: '智能搜索'
-          // if do not set roles, means: this page does not require permission
-        }
-      },
-      {
         path: 'indicatorsLibrary',
         component: () => import('@/views/myVueFiles/planningManage/indicatorsLibrary'),
         name: 'indicatorsLibrary',
         meta: {
           title: '指标库',
           roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'intelligentDisplay',
+        component: () => import('@/views/myVueFiles/planningManage/intelligentDisplay'),
+        name: 'intelligentDisplay',
+        meta: {
+          title: '规划设计'
+          // if do not set roles, means: this page does not require permission
         }
       }
     ]

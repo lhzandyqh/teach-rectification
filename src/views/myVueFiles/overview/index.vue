@@ -39,7 +39,7 @@
         <div class="tongji">
           <h3>规划总数</h3>
           <div>
-            <span style="font-size: 15px;color: #4A9FF9"><span style="font-size: 40px;color: #4A9FF9">0</span>个</span>
+            <span style="font-size: 15px;color: #4A9FF9"><span style="font-size: 40px;color: #4A9FF9">54</span>个</span>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
           <div class="item_content">
             <span>待提审（个）</span>
             <div class="item_num">
-              <span>0</span>
+              <span>13</span>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
           <div class="item_content">
             <span>审核中（个）</span>
             <div class="item_num">
-              <span>0</span>
+              <span>2</span>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@
           <div class="item_content">
             <span>审核未通过（个）</span>
             <div class="item_num">
-              <span>0</span>
+              <span>15</span>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@
           <div class="item_content">
             <span>未开始（个）</span>
             <div class="item_num">
-              <span>0</span>
+              <span>7</span>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@
           <div class="item_content">
             <span>进行中（个）</span>
             <div class="item_num">
-              <span>0</span>
+              <span>23</span>
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@
           <div class="item_content">
             <span>已完成（个）</span>
             <div class="item_num">
-              <span>0</span>
+              <span>24</span>
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@
           <div class="item_content">
             <span>逾期未完成（个）</span>
             <div class="item_num">
-              <span>0</span>
+              <span>7</span>
             </div>
           </div>
         </div>
@@ -161,7 +161,7 @@
           <div class="item_content">
             <span>审核中（个）</span>
             <div class="item_num">
-              <span>0</span>
+              <span>12</span>
             </div>
           </div>
         </div>
@@ -169,7 +169,7 @@
           <div class="item_content">
             <span>审核未通过（个）</span>
             <div class="item_num">
-              <span>0</span>
+              <span>3</span>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@
           <div class="item_content">
             <span>未开始（个）</span>
             <div class="item_num">
-              <span>0</span>
+              <span>5</span>
             </div>
           </div>
         </div>
@@ -185,7 +185,7 @@
           <div class="item_content">
             <span>进行中（个）</span>
             <div class="item_num">
-              <span>0</span>
+              <span>25</span>
             </div>
           </div>
         </div>
@@ -193,7 +193,7 @@
           <div class="item_content">
             <span>已完成（个）</span>
             <div class="item_num">
-              <span>0</span>
+              <span>31</span>
             </div>
           </div>
         </div>
@@ -201,7 +201,7 @@
           <div class="item_content">
             <span>逾期未完成（个）</span>
             <div class="item_num">
-              <span>0</span>
+              <span>2</span>
             </div>
           </div>
         </div>

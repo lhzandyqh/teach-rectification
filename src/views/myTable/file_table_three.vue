@@ -5,44 +5,48 @@
       :header-cell-style="{background:'#F5F7FA',color:'#788c90'}"
     >
       <el-table-column
-        prop=""
+        prop="hao"
         label="序号"
         width="50"
       />
       <el-table-column
-        prop="date"
+        prop="mingcheng"
         label="文档名称"
         width="300"
       />
       <el-table-column
-        prop="date"
+        prop="cenmian"
         label="层面"
         width="100"
       />
       <el-table-column
-        prop="date"
+        prop="guihua"
         label="所属规划"
         width="200"
       />
       <el-table-column
-        prop="date"
+        prop="ren"
         label="上传人"
         width="100"
       />
       <el-table-column
-        prop="date"
+        prop="daxiao"
         label="大小"
         width="130"
       />
       <el-table-column
-        prop="date"
+        prop="chuangjian"
         label="创建日期"
         width="200"
       />
       <el-table-column
         prop="address"
         label="操作"
-      />
+      >
+        <template slot-scope="scope">
+          <el-button type="text" @click="console.log(scope.row)">下载</el-button>
+        </template>
+      </el-table-column>
     </el-table>
   </div>
 </template>
@@ -53,45 +57,45 @@ export default {
   data() {
     return {
       tableData: [{
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市'
+        hao: '1',
+        mingcheng: '学生综合素质建设',
+        cenmian: '学生',
+        guihua: '学生综合素质建设',
+        ren: '刘志群',
+        daxiao: '105.50KB',
+        chuangjian: '2019-09-25'
       }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市'
+        hao: '2',
+        mingcheng: '教育国际化水平建设',
+        cenmian: '学校',
+        guihua: '教育国际化水平建设',
+        ren: '李福庆',
+        daxiao: '75.50KB',
+        chuangjian: '2019-09-25'
       }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市'
+        hao: '3',
+        mingcheng: '师资队伍建设规划建设',
+        cenmian: '教师',
+        guihua: '师资队伍建设',
+        ren: '李哲',
+        daxiao: '155.80KB',
+        chuangjian: '2019-09-25'
       }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市'
+        hao: '4',
+        mingcheng: '专业建设发展规划',
+        cenmian: '学生',
+        guihua: '专业建设发展',
+        ren: '李淑艳',
+        daxiao: '102.50KB',
+        chuangjian: '2019-09-25'
       }, {
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市'
-      }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市'
-      }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市'
-      }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市'
+        hao: '5',
+        mingcheng: '智能校园建设',
+        cenmian: '校园',
+        guihua: '智能校园建设',
+        ren: '刘志群',
+        daxiao: '101.50KB',
+        chuangjian: '2019-09-25'
       }]
     }
   }

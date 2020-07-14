@@ -1,85 +1,91 @@
 <template>
-  <div class="login-container">
-    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
-      <div class="title-container">
-        <h3 class="title">
-          {{ $t('login.title') }}
-        </h3>
-        <lang-select class="set-language" />
-      </div>
-
-      <el-form-item prop="username">
-        <span class="svg-container">
-          <svg-icon icon-class="user" />
-        </span>
-        <el-input
-          ref="username"
-          v-model="loginForm.username"
-          :placeholder="$t('login.username')"
-          name="username"
-          type="text"
-          auto-complete="on"
-        />
-      </el-form-item>
-
-      <el-form-item prop="password">
-        <span class="svg-container">
-          <svg-icon icon-class="password" />
-        </span>
-        <el-input
-          ref="password"
-          v-model="loginForm.password"
-          :type="passwordType"
-          :placeholder="$t('login.password')"
-          name="password"
-          auto-complete="on"
-          @keyup.enter.native="handleLogin"
-        />
-        <span class="show-pwd" @click="showPwd">
-          <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
-        </span>
-      </el-form-item>
-
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">
-        {{ $t('login.logIn') }}
-      </el-button>
-
-      <div style="position:relative">
-        <div class="tips">
-          <span>{{ $t('login.username') }} : admin</span>
-          <span>{{ $t('login.password') }} : {{ $t('login.any') }}</span>
-        </div>
-        <div class="tips">
-          <span style="margin-right:18px;">
-            {{ $t('login.username') }} : editor
-          </span>
-          <span>{{ $t('login.password') }} : {{ $t('login.any') }}</span>
-        </div>
-
-        <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
-          {{ $t('login.thirdparty') }}
-        </el-button>
-      </div>
-    </el-form>
-
-    <el-dialog :title="$t('login.thirdparty')" :visible.sync="showDialog">
-      {{ $t('login.thirdpartyTips') }}
-      <br>
-      <br>
-      <br>
-      <social-sign />
-    </el-dialog>
+  <div class="app_container" style="text-align: center;background-color: #fefefe;height: 100%">
+    <img src="../../assets/dengluing.gif">
+    <div>
+      <span style="font-size: 30px;font-weight: bold;color: #5ec7e2">正在登录...</span>
+    </div>
   </div>
+<!--  <div class="login-container">-->
+<!--&lt;!&ndash;    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="title-container">&ndash;&gt;-->
+<!--&lt;!&ndash;        <h3 class="title">&ndash;&gt;-->
+<!--&lt;!&ndash;          {{ $t('login.title') }}&ndash;&gt;-->
+<!--&lt;!&ndash;        </h3>&ndash;&gt;-->
+<!--&lt;!&ndash;        <lang-select class="set-language" />&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;      <el-form-item prop="username">&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="svg-container">&ndash;&gt;-->
+<!--&lt;!&ndash;          <svg-icon icon-class="user" />&ndash;&gt;-->
+<!--&lt;!&ndash;        </span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <el-input&ndash;&gt;-->
+<!--&lt;!&ndash;          ref="username"&ndash;&gt;-->
+<!--&lt;!&ndash;          v-model="loginForm.username"&ndash;&gt;-->
+<!--&lt;!&ndash;          :placeholder="$t('login.username')"&ndash;&gt;-->
+<!--&lt;!&ndash;          name="username"&ndash;&gt;-->
+<!--&lt;!&ndash;          type="text"&ndash;&gt;-->
+<!--&lt;!&ndash;          auto-complete="on"&ndash;&gt;-->
+<!--&lt;!&ndash;        />&ndash;&gt;-->
+<!--&lt;!&ndash;      </el-form-item>&ndash;&gt;-->
+
+<!--&lt;!&ndash;      <el-form-item prop="password">&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="svg-container">&ndash;&gt;-->
+<!--&lt;!&ndash;          <svg-icon icon-class="password" />&ndash;&gt;-->
+<!--&lt;!&ndash;        </span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <el-input&ndash;&gt;-->
+<!--&lt;!&ndash;          ref="password"&ndash;&gt;-->
+<!--&lt;!&ndash;          v-model="loginForm.password"&ndash;&gt;-->
+<!--&lt;!&ndash;          :type="passwordType"&ndash;&gt;-->
+<!--&lt;!&ndash;          :placeholder="$t('login.password')"&ndash;&gt;-->
+<!--&lt;!&ndash;          name="password"&ndash;&gt;-->
+<!--&lt;!&ndash;          auto-complete="on"&ndash;&gt;-->
+<!--&lt;!&ndash;          @keyup.enter.native="handleLogin"&ndash;&gt;-->
+<!--&lt;!&ndash;        />&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="show-pwd" @click="showPwd">&ndash;&gt;-->
+<!--&lt;!&ndash;          <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />&ndash;&gt;-->
+<!--&lt;!&ndash;        </span>&ndash;&gt;-->
+<!--&lt;!&ndash;      </el-form-item>&ndash;&gt;-->
+
+<!--&lt;!&ndash;      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">&ndash;&gt;-->
+<!--&lt;!&ndash;        {{ $t('login.logIn') }}&ndash;&gt;-->
+<!--&lt;!&ndash;      </el-button>&ndash;&gt;-->
+
+<!--&lt;!&ndash;      <div style="position:relative">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="tips">&ndash;&gt;-->
+<!--&lt;!&ndash;          <span>{{ $t('login.username') }} : admin</span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span>{{ $t('login.password') }} : {{ $t('login.any') }}</span>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="tips">&ndash;&gt;-->
+<!--&lt;!&ndash;          <span style="margin-right:18px;">&ndash;&gt;-->
+<!--&lt;!&ndash;            {{ $t('login.username') }} : editor&ndash;&gt;-->
+<!--&lt;!&ndash;          </span>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span>{{ $t('login.password') }} : {{ $t('login.any') }}</span>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <el-button class="thirdparty-button" type="primary" @click="showDialog=true">&ndash;&gt;-->
+<!--&lt;!&ndash;          {{ $t('login.thirdparty') }}&ndash;&gt;-->
+<!--&lt;!&ndash;        </el-button>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </el-form>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <el-dialog :title="$t('login.thirdparty')" :visible.sync="showDialog">&ndash;&gt;-->
+<!--&lt;!&ndash;      {{ $t('login.thirdpartyTips') }}&ndash;&gt;-->
+<!--&lt;!&ndash;      <br>&ndash;&gt;-->
+<!--&lt;!&ndash;      <br>&ndash;&gt;-->
+<!--&lt;!&ndash;      <br>&ndash;&gt;-->
+<!--&lt;!&ndash;      <social-sign />&ndash;&gt;-->
+<!--&lt;!&ndash;    </el-dialog>&ndash;&gt;-->
+<!--  </div>-->
 </template>
 
 <script>
 import { validUsername } from '@/utils/validate'
-import LangSelect from '@/components/LangSelect'
-import SocialSign from './socialsignin'
+// import LangSelect from '@/components/LangSelect'
+// import SocialSign from './socialsignin'
 
 export default {
   name: 'Login',
-  components: { LangSelect, SocialSign },
+  // components: { LangSelect, SocialSign },
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
@@ -127,11 +133,30 @@ export default {
     } else if (this.loginForm.password === '') {
       this.$refs.password.focus()
     }
+    setTimeout(() => {
+      this.earlyLogin()
+    }, 2000)
   },
   destroyed() {
     // window.removeEventListener('hashchange', this.afterQRScan)
   },
   methods: {
+    earlyLogin: function() {
+      console.log('开始自动登录')
+      this.$store.dispatch('LoginByUsername', this.loginForm).then(() => {
+        this.loading = false
+        this.$message({
+          message: '登录成功',
+          type: 'success'
+        })
+        // this.$router.push({ path: this.redirect || '/' })
+        this.$router.push({ path: '/' })
+      }
+      ).catch((msg) => {
+        this.$message.error(msg)
+        this.loading = false
+      })
+    },
     showPwd() {
       if (this.passwordType === 'password') {
         this.passwordType = ''

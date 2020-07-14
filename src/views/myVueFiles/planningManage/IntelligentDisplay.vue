@@ -168,7 +168,7 @@
               :page-sizes="[10, 20, 30, 40]"
               :page-size="10"
               layout="total, sizes, prev, pager, next, jumper"
-              :total="235"
+              :total="6"
               @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
             />
@@ -279,7 +279,7 @@ export default {
 <style scoped>
   .content_container {
     width: 100%;
-    height: 700px;
+    /*height: 700px;*/
     background-color: white;
   }
   .content_function {

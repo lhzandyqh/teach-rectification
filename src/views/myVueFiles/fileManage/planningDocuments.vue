@@ -73,7 +73,7 @@
                 :page-sizes="[10, 20, 30, 40]"
                 :page-size="10"
                 layout="total, sizes, prev, pager, next, jumper"
-                :total="235"
+                :total="5"
                 @size-change="handleSizeChange"
                 @current-change="handleCurrentChange"
               />
@@ -151,7 +151,7 @@
               <el-pagination
                 :current-page="currentPage4"
                 :page-sizes="[10, 20, 30, 40]"
-                :page-size="10"
+                :page-size="0"
                 layout="total, sizes, prev, pager, next, jumper"
                 :total="235"
                 @size-change="handleSizeChange"
