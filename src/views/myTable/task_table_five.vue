@@ -69,7 +69,7 @@ export default {
         zhuangtai: '未处理',
         chuangjian: '2019-11-02',
         jiezhi: '2019-12-02',
-        ren: '刘云霞',
+        ren: '刘老师',
         bumen: '高等职业教育研究所'
       }, {
         hao: '2',
@@ -78,7 +78,7 @@ export default {
         zhuangtai: '未处理',
         chuangjian: '2019-11-02',
         jiezhi: '2019-12-02',
-        ren: '吕方',
+        ren: '吕老师',
         bumen: '高等职业教育研究所'
       }, {
         hao: '3',
@@ -87,7 +87,7 @@ export default {
         zhuangtai: '未处理',
         chuangjian: '2019-08-02',
         jiezhi: '2019-12-02',
-        ren: '吕方',
+        ren: '吕老师',
         bumen: '高等职业教育研究所'
       }, {
         hao: '4',
@@ -96,7 +96,7 @@ export default {
         zhuangtai: '未处理',
         chuangjian: '2019-05-02',
         jiezhi: '2019-11-02',
-        ren: '张书艳',
+        ren: '张老师',
         bumen: '高等职业教育研究所'
       }, {
         hao: '5',
@@ -105,7 +105,7 @@ export default {
         zhuangtai: '未处理',
         chuangjian: '2019-05-02',
         jiezhi: '2019-11-02',
-        ren: '张书艳',
+        ren: '张老师',
         bumen: '高等职业教育研究所'
       }]
     }

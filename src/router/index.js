@@ -129,8 +129,8 @@ export const asyncRoutes = [
         component: () => import('@/views/myVueFiles/planningManage/indicatorsLibrary'),
         name: 'indicatorsLibrary',
         meta: {
-          title: '指标库',
-          roles: ['admin'] // or you can only set roles in sub nav
+          title: '诊改指标'
+          // roles: ['admin'] // or you can only set roles in sub nav
         }
       },
       {
@@ -156,21 +156,30 @@ export const asyncRoutes = [
     },
     children: [
       {
-        path: 'qualityMonitoring',
-        component: () => import('@/views/myVueFiles/taskManage/qualityMonitoring'),
-        name: 'qualityMonitoring',
-        meta: {
-          title: '质量监控'
-          // if do not set roles, means: this page does not require permission
-        }
-      },
-      {
         path: 'taskRelease',
         component: () => import('@/views/myVueFiles/taskManage/taskRelease'),
         name: 'taskRelease',
         meta: {
           title: '任务发布',
           roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'taskReview',
+        component: () => import('@/views/myVueFiles/taskManage/taskReview'),
+        name: 'taskReview',
+        meta: {
+          title: '任务审核',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'qualityMonitoring',
+        component: () => import('@/views/myVueFiles/taskManage/qualityMonitoring'),
+        name: 'qualityMonitoring',
+        meta: {
+          title: '质量监控'
+          // if do not set roles, means: this page does not require permission
         }
       },
       {
@@ -264,18 +273,18 @@ export const asyncRoutes = [
       }
     ]
   },
-  {
-    path: '/processManagement',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/myVueFiles/processManagement/index'),
-        name: 'processManagement',
-        meta: { title: '流程管理', icon: 'guide', noCache: true }
-      }
-    ]
-  },
+  // {
+  //   path: '/processManagement',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       component: () => import('@/views/myVueFiles/processManagement/index'),
+  //       name: 'processManagement',
+  //       meta: { title: '流程管理', icon: 'guide', noCache: true }
+  //     }
+  //   ]
+  // },
   {
     path: '/majorProjectRecord',
     component: Layout,

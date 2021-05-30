@@ -24,7 +24,7 @@ export default {
         legend: {
           orient: 'vertical',
           right: 10,
-          data: ['待提审', '审核中', '审核未通过', '未开始', '进行中', '已完成', '逾期未完成']
+          data: ['科研论文', '院级课题', '厅级课题', '省级课题', '国家级课题', '技术转让', '技术开发']
         },
         series: [
           {
@@ -47,13 +47,13 @@ export default {
               show: true
             },
             data: [
-              { value: 33, name: '待提审' },
-              { value: 31, name: '审核中' },
-              { value: 23, name: '审核未通过' },
-              { value: 13, name: '未开始' },
-              { value: 48, name: '进行中' },
-              { value: 53, name: '已完成' },
-              { value: 18, name: '逾期未完成' }
+              { value: 33, name: '科研论文' },
+              { value: 31, name: '院级课题' },
+              { value: 23, name: '厅级课题' },
+              { value: 13, name: '省级课题' },
+              { value: 48, name: '国家级课题' },
+              { value: 53, name: '技术转让' },
+              { value: 18, name: '技术开发' }
             ]
           }
         ]

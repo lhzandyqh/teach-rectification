@@ -70,7 +70,7 @@ export default {
         xuenian: '2018-2019',
         xueqi: '1',
         zhuanye: '经济贸易类',
-        ren: '程杰',
+        ren: '程老师',
         chuangjian: '2019-10-10'
       }, {
         hao: '2',
@@ -78,7 +78,7 @@ export default {
         xuenian: '2018-2019',
         xueqi: '1',
         zhuanye: '国际贸易实务',
-        ren: '王慧芳',
+        ren: '王老师',
         chuangjian: '2019-10-10'
       }, {
         hao: '3',
@@ -86,7 +86,7 @@ export default {
         xuenian: '2018-2019',
         xueqi: '1',
         zhuanye: '网络营销',
-        ren: '李晶晶',
+        ren: '李老师',
         chuangjian: '2019-10-14'
       }, {
         hao: '4',
@@ -94,7 +94,7 @@ export default {
         xuenian: '2018-2019',
         xueqi: '1',
         zhuanye: '经济贸易类',
-        ren: '段权至',
+        ren: '段老师',
         chuangjian: '2019-10-10'
       }, {
         hao: '5',
@@ -102,7 +102,7 @@ export default {
         xuenian: '2018-2019',
         xueqi: '1',
         zhuanye: '物流管理',
-        ren: '王立新',
+        ren: '王老师',
         chuangjian: '2019-10-10'
       }]
     }

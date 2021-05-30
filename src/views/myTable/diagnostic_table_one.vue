@@ -64,35 +64,35 @@ export default {
         mingcheng: '[2018-2019]学年学工部诊断报告',
         cengji: '部门',
         xuenian: '2018-2019',
-        fuze: '李志群',
+        fuze: '李老师',
         chaungjian: '2019-12-01'
       }, {
         hao: '2',
         mingcheng: '[2018-2019]学年人事处诊断报告',
         cengji: '部门',
         xuenian: '2018-2019',
-        fuze: '张丽',
+        fuze: '张老师',
         chaungjian: '2019-12-01'
       }, {
         hao: '3',
         mingcheng: '[2018-2019]学年教务处诊断报告',
         cengji: '部门',
         xuenian: '2018-2019',
-        fuze: '李哲',
+        fuze: '李老师',
         chaungjian: '2019-12-01'
       }, {
         hao: '4',
         mingcheng: '[2018-2019]学年后勤管理处诊断报告',
         cengji: '部门',
         xuenian: '2018-2019',
-        fuze: '刘洪涛',
+        fuze: '刘老师',
         chaungjian: '2019-12-01'
       }, {
         hao: '5',
         mingcheng: '[2018-2019]学年高等职业教育研究所诊断报告',
         cengji: '部门',
         xuenian: '2018-2019',
-        fuze: '吴云霞',
+        fuze: '吴老师',
         chaungjian: '2019-12-01'
       }]
     }

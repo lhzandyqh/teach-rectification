@@ -3,6 +3,103 @@
     <div class="plan_overview">
       <div class="first_layer">
         <div class="img_container">
+          <img src="../../../assets/icon/zhengai.png">
+        </div>
+        <div class="function_container">
+          <h3>诊改总览</h3>
+          <div class="function_items">
+            <span>诊改层面：</span>
+            <el-select v-model="value5" style="width: 120px" placeholder="请选择">
+              <el-option
+                v-for="item in option5"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              />
+            </el-select>
+            <el-date-picker
+              v-model="value1"
+              style="width: 220px"
+              type="daterange"
+              range-separator="-"
+              start-placeholder="开始日期"
+              end-placeholder="结束日期"
+            />
+            <el-button type="primary">搜索</el-button>
+          </div>
+        </div>
+        <div class="tongji">
+          <h3>整改指标点总数</h3>
+          <div>
+            <span style="font-size: 15px;color: #4A9FF9"><span style="font-size: 40px;color: #4A9FF9">214</span>个</span>
+          </div>
+        </div>
+      </div>
+      <div class="second_layer">
+        <div class="second_layer_item" style="width: 200px">
+          <div class="item_content">
+            <span>指标点正常（个）</span>
+            <div class="item_num">
+              <span>206</span>
+            </div>
+          </div>
+        </div>
+        <div class="second_layer_item" style="width: 200px">
+          <div class="item_content">
+            <span>指标点预警（个）</span>
+            <div class="item_num">
+              <span>8</span>
+            </div>
+          </div>
+        </div>
+        <div class="second_layer_item" style="width: 200px">
+          <div class="item_content">
+            <span>本年度新增指标点（个）</span>
+            <div class="item_num">
+              <span>16</span>
+            </div>
+          </div>
+        </div>
+        <div class="second_layer_item" style="width: 200px">
+          <div class="item_content">
+            <span>预警指标点诊改完成（个）</span>
+            <div class="item_num">
+              <span>8</span>
+            </div>
+          </div>
+        </div>
+        <!--        <div class="second_layer_item">-->
+        <!--          <div class="item_content">-->
+        <!--            <span>进行中（个）</span>-->
+        <!--            <div class="item_num">-->
+        <!--              <span>23</span>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--        <div class="second_layer_item">-->
+        <!--          <div class="item_content">-->
+        <!--            <span>已完成（个）</span>-->
+        <!--            <div class="item_num">-->
+        <!--              <span>24</span>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+        <!--        <div class="second_layer_item">-->
+        <!--          <div class="item_content">-->
+        <!--            <span>逾期未完成（个）</span>-->
+        <!--            <div class="item_num">-->
+        <!--              <span>7</span>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--        </div>-->
+      </div>
+    </div>
+    <div class="chart_container">
+      <echart-three />
+    </div>
+    <div class="plan_overview" style="margin-top: 20px">
+      <div class="first_layer">
+        <div class="img_container">
           <img src="../../../assets/icon/guihua.png">
         </div>
         <div class="function_container">
@@ -224,12 +321,14 @@
 <script>
 import echartOne from '@/views/myEcharts/overview_chart_one'
 import echartTwo from '@/views/myEcharts/overview_chart_two'
+import echartThree from '@/views/myEcharts/overview_chart_three'
 import tableOne from '@/views/myTable/overview_table_one'
 export default {
   name: 'Index',
   components: {
     echartOne,
     echartTwo,
+    echartThree,
     tableOne
   },
   data() {
@@ -264,10 +363,27 @@ export default {
         value: '个体任务',
         label: '个体任务'
       }],
+      option5: [{
+        value: '学校',
+        label: '学校'
+      }, {
+        value: '专业',
+        label: '专业'
+      }, {
+        value: '课程',
+        label: '课程'
+      }, {
+        value: '师资',
+        label: '师资'
+      }, {
+        value: '学生',
+        label: '学生'
+      }],
       value1: '',
       value2: '',
       value3: '',
-      value4: ''
+      value4: '',
+      value5: ''
     }
   }
 }

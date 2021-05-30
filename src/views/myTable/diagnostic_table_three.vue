@@ -64,35 +64,35 @@ export default {
         mingcheng: '[2018-2019]学年学生层面质量报告',
         cengji: '学生',
         xuenian: '2018-2019',
-        fuze: '李志群',
+        fuze: '李老师',
         chaungjian: '2019-12-01'
       }, {
         hao: '2',
         mingcheng: '[2018-2019]学年教师层面质量报告',
         cengji: '教师',
         xuenian: '2018-2019',
-        fuze: '柳云龙',
+        fuze: '柳老师',
         chaungjian: '2019-12-01'
       }, {
         hao: '3',
         mingcheng: '[2018-2019]学年课程层面质量报告',
         cengji: '课程',
         xuenian: '2018-2019',
-        fuze: '李哲',
+        fuze: '李老师',
         chaungjian: '2019-12-01'
       }, {
         hao: '4',
         mingcheng: '[2018-2019]学年专业层面质量报告',
         cengji: '专业',
         xuenian: '2018-2019',
-        fuze: '李哲',
+        fuze: '李老师',
         chaungjian: '2019-12-01'
       }, {
         hao: '5',
         mingcheng: '[2018-2019]学年学院层面质量报告',
         cengji: '学校',
         xuenian: '2018-2019',
-        fuze: '刘淑艳',
+        fuze: '刘老师',
         chaungjian: '2019-12-01'
       }]
     }

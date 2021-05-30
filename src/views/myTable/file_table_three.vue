@@ -61,7 +61,7 @@ export default {
         mingcheng: '学生综合素质建设',
         cenmian: '学生',
         guihua: '学生综合素质建设',
-        ren: '刘志群',
+        ren: '刘老师',
         daxiao: '105.50KB',
         chuangjian: '2019-09-25'
       }, {
@@ -69,7 +69,7 @@ export default {
         mingcheng: '教育国际化水平建设',
         cenmian: '学校',
         guihua: '教育国际化水平建设',
-        ren: '李福庆',
+        ren: '李老师',
         daxiao: '75.50KB',
         chuangjian: '2019-09-25'
       }, {
@@ -77,7 +77,7 @@ export default {
         mingcheng: '师资队伍建设规划建设',
         cenmian: '教师',
         guihua: '师资队伍建设',
-        ren: '李哲',
+        ren: '李老师',
         daxiao: '155.80KB',
         chuangjian: '2019-09-25'
       }, {
@@ -85,7 +85,7 @@ export default {
         mingcheng: '专业建设发展规划',
         cenmian: '学生',
         guihua: '专业建设发展',
-        ren: '李淑艳',
+        ren: '李老师',
         daxiao: '102.50KB',
         chuangjian: '2019-09-25'
       }, {
@@ -93,7 +93,7 @@ export default {
         mingcheng: '智能校园建设',
         cenmian: '校园',
         guihua: '智能校园建设',
-        ren: '刘志群',
+        ren: '刘老师',
         daxiao: '101.50KB',
         chuangjian: '2019-09-25'
       }]

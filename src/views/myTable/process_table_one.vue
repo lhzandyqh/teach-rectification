@@ -12,7 +12,7 @@
       <el-table-column
         prop="mingcheng"
         label="流程名称"
-        width="400"
+        width="200"
       />
       <el-table-column
         prop="miaoshu"

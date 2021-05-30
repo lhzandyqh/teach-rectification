@@ -74,7 +74,7 @@ export default {
         guihua: '学校',
         renwu: '协助省教育厅职成处撰写河北省职业教育体制机制改革',
         ren: '',
-        shangchuan: '张淑艳',
+        shangchuan: '张老师',
         daxiao: '20KB',
         chuangjian: '2020-05-20 '
       }]

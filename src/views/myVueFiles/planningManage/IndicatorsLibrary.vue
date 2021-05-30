@@ -3,69 +3,154 @@
     <div class="main_container">
       <div class="left">
         <div class="left_content">
-          <div class="button_container">
-            <el-button-group>
-              <el-button type="primary" size="small">新建</el-button>
-              <el-button type="primary" size="small" disabled>编辑</el-button>
-              <el-button type="primary" size="small" disabled>删除</el-button>
-            </el-button-group>
-          </div>
+          <!--          <div class="button_container">-->
+          <!--            <el-button-group>-->
+          <!--              <el-button type="primary" size="small">新建</el-button>-->
+          <!--              <el-button type="primary" size="small" disabled>编辑</el-button>-->
+          <!--              <el-button type="primary" size="small" disabled>删除</el-button>-->
+          <!--            </el-button-group>-->
+          <!--          </div>-->
           <div class="tree_container">
             <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick" />
           </div>
         </div>
       </div>
       <div class="right">
-        <div class="right_first_container">
-          <div class="function_item">
-            <span>监测点重要级别:</span>
-            <el-select v-model="value1" style="width: 150px;margin-left: 15px" placeholder="请选择">
-              <el-option
-                v-for="item in option1"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value"
-              />
-            </el-select>
+        <div v-if="rightflag" class="right_first">
+          <div class="right_first_container">
+            <div class="function_item">
+              <span>监测点重要级别:</span>
+              <el-select v-model="value1" style="width: 150px;margin-left: 15px" placeholder="请选择">
+                <el-option
+                  v-for="item in option1"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                />
+              </el-select>
+            </div>
+            <div class="function_item">
+              <span>监测点名称:</span>
+              <el-input v-model="value1" style="width: 150px;margin-left: 15px" placeholder="请输入" />
+            </div>
+            <div class="button-container">
+              <!--              <el-button type="primary" size="small" @click="newPoint">新建监测点</el-button>-->
+              <el-button type="primary" size="small">导出检测点</el-button>
+              <el-button type="primary" size="small">搜索</el-button>
+            </div>
           </div>
-          <div class="function_item">
-            <span>监测点名称:</span>
-            <el-input v-model="value1" style="width: 150px;margin-left: 15px" placeholder="请输入" />
-          </div>
-          <div class="button-container">
-            <el-button type="primary" size="small">新建监测点</el-button>
-            <el-button type="primary" size="small">导出检测点</el-button>
-            <el-button type="primary" size="small">搜索</el-button>
+          <div class="right_second_container">
+            <planningtablethree :table-data-one="tableDataOne" />
           </div>
         </div>
-        <div class="right_second_container">
-          <planningtablethree />
-          <div class="block">
-            <el-pagination
-              :current-page="currentPage4"
-              :page-sizes="[10, 20, 30, 40]"
-              :page-size="10"
-              layout="total, sizes, prev, pager, next, jumper"
-              :total="5"
-              @size-change="handleSizeChange"
-              @current-change="handleCurrentChange"
-            />
-          </div>
+        <div v-if="!rightflag" class="right_second">
+          <indicators-table :table-data="tableData" :table-style="{ width:'100%' }" />
         </div>
       </div>
     </div>
+    <el-dialog
+      title="新建监测点"
+      :visible.sync="dialogVisible"
+      width="50%"
+      :before-close="handleClose"
+    >
+      <el-row>
+        <el-col :span="8">
+          <div class="single">
+            <div class="biaoqian">
+              <span style="font-weight: bolder">监测点名称：</span>
+            </div>
+            <div class="content">
+              <el-input v-model="form.name" placeholder="请输入内容" />
+            </div>
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="single">
+            <div class="biaoqian">
+              <span style="font-weight: bolder">监测点级别：</span>
+            </div>
+            <div class="content">
+              <el-select v-model="form.jb" style="width: 185px" placeholder="请选择">
+                <el-option label="重要" value="重要" />
+                <el-option label="一般" value="一般" />
+              </el-select>
+            </div>
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="single">
+            <div class="biaoqian">
+              <span style="font-weight: bolder">责任部门：</span>
+            </div>
+            <div class="content">
+              <!--              <el-input placeholder="请输入内容" v-model="form.name" />-->
+              <el-cascader
+                v-model="form.zrbm"
+                :options="optionsone"
+                @change="handleChange"
+              />
+            </div>
+          </div>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="8">
+          <div class="single">
+            <div class="biaoqian">
+              <span style="font-weight: bolder">责任人:     </span>
+            </div>
+            <div class="content">
+              <el-input v-model="form.zrr" placeholder="请输入内容" />
+            </div>
+          </div>
+        </el-col>
+        <el-col :span="8" />
+        <el-col :span="8" />
+      </el-row>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
 <script>
 import planningtablethree from '@/views/myTable/planning_table_three'
+import IndicatorsTable from '@/views/myVueFiles/planningManage/IndicatorsTable'
+import { getRectificationIndicators, getAllIndicatorsItems } from '@/api/getData.js'
+// import { getIndicatorsDetail } from '@/api/getData.js'
+import axios from 'axios'
 export default {
   name: 'IndicatorsLibrary',
   components: {
-    planningtablethree
+    planningtablethree,
+    IndicatorsTable
   },
   data() {
     return {
+      pagesize: '10',
+      currentPage4: '',
+      dialogVisible: false,
+      tableDataOne: [],
+      tableData: [
+        { key: '监测点名称', value: '1001' },
+        { key: '监测点重要级别', value: '篮球' },
+        { key: '责任部门', value: '120.00' },
+        { key: '责任人', value: '2017-03-01' },
+        { key: '数据类型', value: '在线支付' },
+        { key: '计量单位', value: '北京市海淀区西北旺镇' },
+        { key: '数据项', value: '1001' },
+        { key: '接受方式', value: '篮球' },
+        { key: '关联指标', value: '120.00' },
+        { key: '目标值', value: '2017-03-01' },
+        { key: '标准值', value: '在线支付' },
+        { key: '预警值', value: '北京市海淀区西北旺镇' },
+        { key: '当前值', value: '在线支付' },
+        { key: '预警规则', value: '北京市海淀区西北旺镇' }
+      ],
+      rightflag: true,
       value1: '',
       value2: '',
       option1: [{
@@ -78,232 +163,183 @@ export default {
         value: '一般',
         label: '一般'
       }],
-      // option2: [{
-      //   value: '职能部门',
-      //   label: '职能部门'
-      // }, {
-      //   value: '教学部门',
-      //   label: '教学部门'
-      // }],
-      data: [{
-        label: '学校',
-        children: [{
-          label: '基本情况',
-          children: [{
-            label: '教职工人员数量'
-          }, {
-            label: '教职工人员性别比例'
-          }, {
-            label: '学生人数'
-          }, {
-            label: '开设专业总数'
-          }, {
-            label: '图书总量'
-          }, {
-            label: '占地面积'
-          }, {
-            label: '师生比'
-          }, {
-            label: '建筑面积'
-          }]
-        }, {
-          label: '管理队伍',
-          children: [{
-            label: '领导班子人员数量'
-          }, {
-            label: '领导班子性别比例'
-          }, {
-            label: '处职干部人员数量'
-          }, {
-            label: '处职干部性别比例'
-          }, {
-            label: '科值干部人员数量'
-          }, {
-            label: '科值干部人员比例'
-          }]
-        }, {
-          label: '党建工作',
-          children: [{
-            label: '组织机构设置数量'
-          }, {
-            label: '党员数量'
-          }, {
-            label: '党员教师比例'
-          }, {
-            label: '党员学生比例'
-          }, {
-            label: '党员教师发展人数'
-          }, {
-            label: '党员学生发展人数'
-          }]
-        }, {
-          label: '师资队伍',
-          children: [{
-            label: '校内专任教师数量'
-          }, {
-            label: '校内专任教师比例'
-          }]
-        }, {
-          label: '教学工作',
-          children: [{
-            label: '教学教材数量'
-          }, {
-            label: '顶岗实习人数'
-          }, {
-            label: '质量工程数量'
-          }, {
-            label: '教学检查次数'
-          }]
-        }, {
-          label: '学生工作',
-          children: [{
-            label: '学生总数'
-          }, {
-            label: '毕业率'
-          }, {
-            label: '社团情况'
-          }, {
-            label: '贫困生人数'
-          }, {
-            label: '违纪数量'
-          }]
-        }, {
-          label: '招生情况',
-          children: [{
-            label: '省内生源数量'
-          }, {
-            label: '省外生源数量'
-          }]
-        }, {
-          label: '就业情况',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '校企合作',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '科研工作',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '社会服务',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '资产状况',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '师资力量',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }]
+      option2: [{
+        value: '职能部门',
+        label: '职能部门'
       }, {
-        label: '课程',
-        children: [{
-          label: '基本信息',
-          children: [{
-            label: '三级 3-1-1'
-          }]
-        }, {
-          label: '课程资源',
-          children: [{
-            label: '三级 3-2-1'
-          }]
-        }, {
-          label: '实训教学',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '课堂教学',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '教学评价',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }]
-      }, {
-        label: '师资',
-        children: [{
-          label: '师资概况',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '基础发展能力',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '教学与专业能力',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '科研能力',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '学生管理能力',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }]
-      }, {
-        label: '学生',
-        children: [{
-          label: '基本信息',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '学业发展',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '身心素质',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '综合素质',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '生活状态',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }, {
-          label: '行为习惯',
-          children: [{
-            label: '三级 1-1-1'
-          }]
-        }]
+        value: '教学部门',
+        label: '教学部门'
       }],
+      data: [],
       defaultProps: {
         children: 'children',
-        label: 'label'
-      }
+        // label: 'label'
+        label: 'levelName'
+      },
+      form: {
+        name: '',
+        zrr: '',
+        jb: '',
+        zrbm: ''
+      },
+      optionsone: [
+        {
+          value: '职能部门',
+          label: '职能部门',
+          children: [{
+            value: '党政群管理机构',
+            label: '党政群管理机构',
+            children: [{
+              value: '后勤管理处',
+              label: '后勤管理处'
+            }, {
+              value: '教务处',
+              label: '教务处'
+            }, {
+              value: '教学督导办公室',
+              label: '教学督导办公室'
+            }, {
+              value: '行政督导办公室',
+              label: '行政督导办公室'
+            }, {
+              value: '学工部',
+              label: '学工部'
+            }, {
+              value: '财务处',
+              label: '财务处'
+            }, {
+              value: '工会',
+              label: '工会'
+            }, {
+              value: '招生就业指导中心',
+              label: '招生就业指导中心'
+            }, {
+              value: '院领导',
+              label: '院领导'
+            }, {
+              value: '党委、院长办公室',
+              label: '党委、院长办公室'
+            }, {
+              value: '组宣部',
+              label: '组宣部'
+            }, {
+              value: '安全工作处',
+              label: '安全工作处'
+            }, {
+              value: '纪检处',
+              label: '纪检处'
+            }, {
+              value: '人事处',
+              label: '人事处'
+            }]
+          }, {
+            value: '教学辅助机构',
+            label: '教学辅助机构',
+            children: [{
+              value: '信息中心',
+              label: '信息中心'
+            }, {
+              value: '科研处',
+              label: '科研处'
+            }, {
+              value: '国际教育交流中心',
+              label: '国际教育交流中心'
+            }]
+          }, {
+            value: '研究机构',
+            label: '研究机构',
+            children: [{
+              value: '高等职业教育研究所',
+              label: '高等职业教育研究所'
+            }]
+          }]
+        }, {
+          value: '教学部门',
+          label: '教学部门'
+        }
+      ]
     }
   },
+  mounted() {
+    this.getIndicators()
+    this.getAllItem()
+  },
   methods: {
+    handleClose(done) {
+      this.$confirm('确认关闭？')
+        .then(_ => {
+          done()
+        })
+        .catch(_ => {})
+    },
+    // createObj: function(pre, cur, index, arr) {
+    //   var obj = {}
+    //   obj[cur] = pre
+    //   return obj
+    // },
+    getIndicators: function() {
+      getRectificationIndicators().then(response => {
+        console.log('测试接口')
+        console.log(response.data.data)
+        this.data = response.data.data
+      })
+    },
     handleNodeClick(data) {
       console.log(data)
+      if (data.children.length === 0) {
+        console.log('可以显示')
+        console.log(data.description)
+        console.log(data.id)
+        console.log(data.children)
+        // getIndicatorsDetail(data.id).then(response => {
+        //   console.log('测试指标详情')
+        //   console.log(response.data.data)
+        //   this.tableData[0].value = response.data.data.jcdmc
+        //   this.tableData[1].value = response.data.data.jcdzyjb
+        var url = 'https://zhongkeruitong.top/rectification/functions/index/getZgIndex/' + data.id
+        axios.get(url).then((res) => {
+          console.log('测试指标详情')
+          console.log(res.data)
+          this.tableData[0].value = res.data.data.jcdmc
+          this.tableData[1].value = res.data.data.jcdzyjb
+          this.tableData[2].value = res.data.data.zrbm
+          this.tableData[3].value = res.data.data.zrr
+          this.tableData[4].value = res.data.data.sjlx
+          this.tableData[5].value = res.data.data.jldw
+          this.tableData[6].value = res.data.data.sjx
+          this.tableData[7].value = res.data.data.jsfs
+          this.tableData[8].value = res.data.data.glzb
+          this.tableData[9].value = res.data.data.mbz
+          this.tableData[10].value = res.data.data.bzz
+          this.tableData[11].value = res.data.data.yjz
+          this.tableData[12].value = res.data.data.dqz
+          this.tableData[13].value = res.data.data.yjgz
+        })
+        // })
+        this.rightflag = false
+      } else {
+        console.log('未到最底层')
+        console.log(data.children)
+        this.rightflag = true
+      }
+    },
+    newPoint: function() {
+      this.dialogVisible = true
+    },
+    getAllItem: function() {
+      getAllIndicatorsItems().then(response => {
+        console.log('测试获取所有的指标')
+        console.log(response.data.data)
+        this.tableDataOne = response.data.data
+      })
+    },
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`)
+      this.pagesize = val
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`)
+      this.currentPage4 = val
     }
   }
 }
@@ -364,5 +400,14 @@ export default {
   }
   .block {
     text-align: center;
+  }
+  .single{
+    display: inline-block;
+  }
+  .biaoqian{
+    display: inline-block;
+  }
+  .content{
+    display: inline-block;
   }
 </style>
